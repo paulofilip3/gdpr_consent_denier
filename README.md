@@ -1,2 +1,4 @@
-# gdpr_consent_denier
-A browser extension to automatically deny all consent for common GDPR banners.
+# GDPR Consent Denier
+A chrome extension to automatically deny consent for common GDPR banners.
+
+Logo by [Mohamed Hassan](https://pixabay.com/users/mohamed_hassan-5229782).
