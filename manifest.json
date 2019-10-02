@@ -1,0 +1,14 @@
+{
+  "name": "GDPR Consent Denier",
+  "version": "1.0",
+  "description": "Automatically deny consent to all purposes for the most common GDPR cookie banners.",
+  "web_accessible_resources" : ["denier.js"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_idle",
+      "js": ["inject.js"]
+    }
+  ],
+  "manifest_version": 2
+}
