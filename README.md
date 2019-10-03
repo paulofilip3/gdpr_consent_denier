@@ -4,4 +4,5 @@
 A chrome extension to automatically deny consent for common GDPR cookie banners.
 
 ### Currently supported banners
-- Quantcast
+- Quantcast (opt-out)
+- TrustArc (no opt-in)

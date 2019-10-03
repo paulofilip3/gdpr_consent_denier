@@ -18,6 +18,25 @@ function denyQuantcast() {
   }, 100)
 }
 
+
+function denyTrustArc() {
+  var tries = 0
+  var intervalId = window.setInterval(function() {
+    if (window.truste) {
+      window.truste.eu.prefclose()
+      console.log("TrustArc GDPR cookies not opted-in!")
+      tries = 100
+    } else {
+      tries += 1
+    }
+    if (tries >= 100) {
+      clearInterval(intervalId)
+    }
+  }, 100)
+}
+
+
 (function() {
   denyQuantcast()
+  denyTrustArc()
 })()
