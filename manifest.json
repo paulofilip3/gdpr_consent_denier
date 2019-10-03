@@ -2,18 +2,18 @@
   "name": "GDPR Consent Denier",
   "version": "1.0",
   "description": "Automatically deny consent to all purposes for the most common GDPR cookie banners.",
-  "web_accessible_resources" : ["/src/js/denier.js"],
+  "web_accessible_resources" : ["src/js/denier.js"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "run_at": "document_idle",
-      "js": ["/src/js/inject.js"]
+      "js": ["src/js/inject.js"]
     }
   ],
   "icons": {
-    "16": "/src/img/gdpr_lock_16.png",
-    "48": "/src/img/gdpr_lock_48.png",
-    "128": "/src/img/gdpr_lock_128.png"
+    "16": "src/img/gdpr_lock_16.png",
+    "48": "src/img/gdpr_lock_48.png",
+    "128": "src/img/gdpr_lock_128.png"
   },
   "homepage_url": "https://github.com/paulofilip3/gdpr_consent_denier",
   "manifest_version": 2
