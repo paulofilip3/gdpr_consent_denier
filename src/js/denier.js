@@ -1,12 +1,23 @@
-(function() {
-  window.setInterval(function() {
+function denyQuantcast() {
+  var tries = 0
+  var intervalId = window.setInterval(function() {
     if (document.getElementById("qcCmpButtons")) {
-      window.__cmpui("updateConsentUi", 2);
-      window.__cmpui("disableAllPurposeConsents");
-      window.__cmpui("updateConsentUi", 3);
-      window.__cmpui("toggleAllVendorConsents", !1);
-      window.__cmp("saveConsents",window.__cmpui("getConsentInfo"), function(){window.__cmpui("dismissConsentUi")});
-      console.log("All GDPR cookies rejected!");
+      window.__cmpui("updateConsentUi", 2)
+      window.__cmpui("disableAllPurposeConsents")
+      window.__cmpui("updateConsentUi", 3)
+      window.__cmpui("toggleAllVendorConsents", !1)
+      window.__cmp("saveConsents", window.__cmpui("getConsentInfo"), function(){window.__cmpui("dismissConsentUi")})
+      console.log("Quantcast GDPR cookies rejected!")
+      tries = 100
+    } else {
+      tries += 1
     }
-  }, 2000);
-})();
+    if (tries >= 100) {
+      clearInterval(intervalId)
+    }
+  }, 100)
+}
+
+(function() {
+  denyQuantcast()
+})()
